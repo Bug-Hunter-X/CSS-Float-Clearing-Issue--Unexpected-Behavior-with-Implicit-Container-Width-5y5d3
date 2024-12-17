@@ -1,0 +1,23 @@
+To resolve the issue, explicitly define the width of the container element or ensure that the floated elements collectively occupy the full width of the container. If that is not possible, an alternative method of clearing the floats, like using a clearfix hack, can be used:
+
+/* Solution: Using clearfix hack */
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Example Usage */
+.container {
+  width: auto; /* Or any width */
+  background-color: #f0f0f0; /* For visualization */
+}
+
+.container.clearfix .element {
+  float: left; /* Or right */
+}
+
+/*Other content*/
+.container.clearfix .content-after { 
+  clear: both;
+}
